@@ -69,3 +69,26 @@ test("renders the abstraction of compute as paper two", async () => {
   const article = html.match(/<article[\s\S]*?<\/article>/)?.[0] ?? "";
   assert.doesNotMatch(article, /—/);
 });
+
+test("renders the markets and investing paper library", async () => {
+  const response = await render("/writings/markets-investing");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Paper 01/);
+  assert.match(html, /AI Compute Infrastructure/);
+  assert.match(html, /More papers will appear here/);
+});
+
+test("renders the neocloud investment memo with real equations", async () => {
+  const response = await render(
+    "/writings/markets-investing/neocloud-inference-era",
+  );
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Underwrite the barbell/);
+  assert.match(html, /The real aggregator math/);
+  assert.match(html, /<math[^>]+display="block"/);
+  assert.match(html, /Capital-recovery factor/);
+  const article = html.match(/<article[\s\S]*?<\/article>/)?.[0] ?? "";
+  assert.doesNotMatch(article, /—/);
+});

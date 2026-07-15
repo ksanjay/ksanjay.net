@@ -469,6 +469,238 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
 .paper-table-wrap th { color: var(--text-faint); font-size: 9px; letter-spacing: .09em; text-transform: uppercase; }
 .paper-table-wrap td { color: var(--text-soft); font-size: 13px; line-height: 1.55; }
 
+/* Markets and investing memo */
+.memo-cover { max-width: 980px; }
+.memo-cover .paper-subtitle { margin-bottom: 22px; }
+.memo-deck {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 560;
+  line-height: 1.58;
+}
+.memo-cover .paper-byline { flex-wrap: wrap; }
+.memo-cover .paper-byline time::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  margin-left: 20px;
+  vertical-align: -2px;
+  background: var(--line-strong);
+}
+.memo-disclaimer {
+  max-width: 740px;
+  margin: 27px auto 0;
+  color: var(--text-faint);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.investment-memo { max-width: 980px; }
+.memo-section {
+  margin-bottom: 92px;
+  scroll-margin-top: 96px;
+}
+.memo-section > h2 {
+  max-width: 780px;
+  margin: 10px 0 24px;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 620;
+  letter-spacing: -.042em;
+  line-height: 1.12;
+}
+.memo-section > h3 {
+  margin: 44px 0 16px;
+  font-size: 22px;
+  font-weight: 620;
+  letter-spacing: -.026em;
+}
+.memo-section > p,
+.memo-section > ul,
+.memo-section > ol {
+  max-width: 790px;
+}
+.memo-section > p {
+  margin-bottom: 0;
+  color: var(--text-soft);
+  font-size: 17px;
+  line-height: 1.82;
+}
+.memo-section > p + p { margin-top: 18px; }
+.memo-table-wrap {
+  width: 100%;
+  margin: 30px 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 0 10px 34px rgba(40, 31, 61, .035);
+}
+.memo-table-wrap table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+.memo-table-wrap th,
+.memo-table-wrap td {
+  padding: 15px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.memo-table-wrap th:last-child,
+.memo-table-wrap td:last-child { border-right: 0; }
+.memo-table-wrap tbody tr:last-child td { border-bottom: 0; }
+.memo-table-wrap th {
+  color: var(--purple-deep);
+  background: var(--purple-soft);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .045em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.memo-table-wrap td {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.memo-table-wrap td:first-child { color: var(--text); font-weight: 610; }
+.memo-table-wrap td:nth-child(2) { font-weight: 620; }
+.memo-table-wrap tbody tr:nth-child(even) td { background: #faf9fc; }
+.memo-callout {
+  max-width: 820px;
+  margin: 30px 0 0;
+  padding: 24px 26px;
+  border: 1px solid #dcd3f6;
+  border-radius: 14px;
+  color: var(--text-soft);
+  background: var(--purple-soft);
+  font-size: 15px;
+  line-height: 1.68;
+}
+.memo-callout strong { color: var(--purple-deep); }
+.memo-view-grid {
+  max-width: 820px;
+  margin: 28px 0 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.memo-view-grid > div {
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.memo-view-grid span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.memo-view-grid p { margin: 0; color: var(--text-soft); font-size: 14px; line-height: 1.62; }
+.equation-card {
+  max-width: 820px;
+  margin: 28px 0;
+  padding: 22px 25px 24px;
+  overflow-x: auto;
+  border: 1px solid #ddd5f5;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #faf8ff, var(--purple-soft));
+}
+.equation-card figcaption {
+  margin-bottom: 18px;
+  color: var(--purple-deep);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+.equation-card math {
+  min-width: max-content;
+  color: var(--text);
+  font-family: "STIX Two Math", "Cambria Math", "Times New Roman", serif;
+  font-size: 26px;
+  text-align: center;
+}
+.memo-note {
+  margin-top: 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--purple);
+  color: var(--text-faint) !important;
+  background: var(--surface-subtle);
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
+.memo-note strong { color: var(--text-soft); }
+.memo-section > ul,
+.memo-section > ol {
+  margin: 25px 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.memo-section > ul li,
+.memo-section > ol li {
+  position: relative;
+  padding: 15px 10px 15px 39px;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.66;
+  border-bottom: 1px solid var(--line);
+}
+.memo-section > ul li::before {
+  content: "•";
+  position: absolute;
+  left: 12px;
+  color: var(--purple);
+}
+.memo-argument-list strong { color: var(--text); }
+.memo-checklist { counter-reset: memo-checklist; }
+.memo-checklist li { counter-increment: memo-checklist; }
+.memo-checklist li::before {
+  content: counter(memo-checklist, decimal-leading-zero);
+  position: absolute;
+  left: 5px;
+  color: var(--purple);
+  font-size: 10px;
+  font-weight: 750;
+}
+.memo-bottom-line { margin-top: 28px; }
+.memo-appendix {
+  padding-top: 50px;
+  border-top: 1px solid var(--line);
+}
+.equation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 30px 0 45px;
+}
+.equation-grid .equation-card { min-width: 0; margin: 0; }
+.equation-grid .equation-card math { font-size: 20px; }
+.memo-glossary {
+  max-width: 820px;
+  margin: 24px 0 40px;
+  border-top: 1px solid var(--line);
+}
+.memo-glossary > div {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.memo-glossary dt { color: var(--text); font-size: 13px; font-weight: 700; }
+.memo-glossary dd { margin: 0; color: var(--text-soft); font-size: 14px; line-height: 1.6; }
+.memo-sources { color: var(--text-faint) !important; font-size: 13px !important; }
+
 @media (max-width: 900px) {
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 82px; }
   .mobius-card { width: min(100%, 560px); }
@@ -560,6 +792,21 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   .paper-markdown > h2 { margin-top: 62px; }
   .paper-markdown > h2 + p { font-size: 18px; }
   .paper-markdown > h3 { font-size: 22px; }
+  .memo-cover .paper-byline time::after { display: none; }
+  .memo-deck { font-size: 15px; }
+  .investment-memo { padding-inline: 19px; }
+  .memo-section { margin-bottom: 70px; }
+  .memo-section > h2 { font-size: 26px; }
+  .memo-section > h3 { font-size: 20px; }
+  .memo-section > p { font-size: 16px; line-height: 1.74; }
+  .memo-view-grid,
+  .equation-grid { grid-template-columns: 1fr; }
+  .equation-card { padding: 20px 18px 22px; }
+  .equation-card math,
+  .equation-grid .equation-card math { font-size: 20px; }
+  .memo-table-wrap { margin-inline: -1px; }
+  .memo-callout { padding: 21px; }
+  .memo-glossary > div { grid-template-columns: 1fr; gap: 6px; }
 }
 
 @media (max-width: 370px) {

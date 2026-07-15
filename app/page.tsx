@@ -144,7 +144,9 @@ export default function Home() {
             <a className="writing-topic-link" href="/writings/technology-products">
               <span>01</span><p>Technology &amp; products</p><span aria-hidden="true">→</span>
             </a>
-            <div><span>02</span><p>Markets &amp; investing</p></div>
+            <a className="writing-topic-link" href="/writings/markets-investing">
+              <span>02</span><p>Markets &amp; investing</p><span aria-hidden="true">→</span>
+            </a>
             <div><span>03</span><p>Notes &amp; observations</p></div>
           </div>
           <p className="coming-soon">More essays will be published here.</p>
