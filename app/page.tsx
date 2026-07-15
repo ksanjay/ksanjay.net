@@ -132,21 +132,23 @@ export default function Home() {
           <span>03</span>
           <p>Writings</p>
         </div>
-        <div className="writings-intro">
-          <h2>Ideas in progress.</h2>
-          <p>
-            Essays and working notes on artificial intelligence, building
-            products, public markets, and the observations that connect them.
-          </p>
+        <div className="writings-content">
+          <div className="writings-intro">
+            <h2>Ideas in progress.</h2>
+            <p>
+              Essays and working notes on artificial intelligence, building
+              products, public markets, and the observations that connect them.
+            </p>
+          </div>
+          <div className="writing-topics" aria-label="Writing topics">
+            <a className="writing-topic-link" href="/writings/technology-products">
+              <span>01</span><p>Technology &amp; products</p><span aria-hidden="true">→</span>
+            </a>
+            <div><span>02</span><p>Markets &amp; investing</p></div>
+            <div><span>03</span><p>Notes &amp; observations</p></div>
+          </div>
+          <p className="coming-soon">More essays will be published here.</p>
         </div>
-        <div className="writing-topics" aria-label="Writing topics">
-          <a className="writing-topic-link" href="/writings/technology-products">
-            <span>01</span><p>Technology &amp; products</p><span aria-hidden="true">→</span>
-          </a>
-          <div><span>02</span><p>Markets &amp; investing</p></div>
-          <div><span>03</span><p>Notes &amp; observations</p></div>
-        </div>
-        <p className="coming-soon">More essays will be published here.</p>
       </section>
 
       <section className="markets section">
