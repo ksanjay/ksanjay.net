@@ -55,3 +55,16 @@ test("renders the first full paper", async () => {
   assert.match(html, /The Bare-Metal \/ Sovereign Stack/);
   assert.match(html, /Iteration Beats Perfection/);
 });
+
+test("renders the abstraction of compute as paper two", async () => {
+  const response = await render(
+    "/writings/technology-products/abstraction-of-compute",
+  );
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Paper 02/);
+  assert.match(html, /The Abstraction of Compute/);
+  assert.match(html, /Agentic Orchestration Owns the Last Mile/);
+  const article = html.match(/<article[\s\S]*?<\/article>/)?.[0] ?? "";
+  assert.doesNotMatch(article, /—/);
+});

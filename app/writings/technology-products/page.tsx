@@ -37,6 +37,28 @@ export default function TechnologyProducts() {
         <div className="paper-shelf">
           <a
             className="paper-card"
+            href="/writings/technology-products/abstraction-of-compute"
+          >
+            <div className="paper-card-meta">
+              <span>Paper 02</span>
+              <time dateTime="2026-07-15">July 15, 2026</time>
+            </div>
+            <div className="paper-card-copy">
+              <p>Enterprise AI · Strategy</p>
+              <h2>The Abstraction of Compute</h2>
+              <h3>
+                Value Migration, Agentic Orchestration, and the Future of
+                Enterprise AI
+              </h3>
+              <p>
+                Why tokens will fade from the buyer’s view, and why the real
+                value will move to the software that completes the work.
+              </p>
+            </div>
+            <span className="paper-card-arrow" aria-hidden="true">→</span>
+          </a>
+          <a
+            className="paper-card"
             href="/writings/technology-products/sovereign-enterprise-ai-blueprint"
           >
             <div className="paper-card-meta">
