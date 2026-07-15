@@ -87,12 +87,6 @@ export default function Home() {
             largest privately held companies.
           </p>
           <p>
-            I shaped the company’s AI product strategy and built its enterprise
-            AI portfolio from the ground up—launching a secure LLM platform,
-            putting six agentic workflows into production, and creating an
-            AI-native venture aimed at a $4 billion market.
-          </p>
-          <p>
             I’ve spent more than 25 years turning major technology shifts into
             products people can actually use: optical networking, cloud,
             mobile, IoT, conversational AI, and now agentic enterprise systems.
