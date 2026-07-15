@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type Point3 = { x: number; y: number; z: number };
 type Point2 = Point3 & { px: number; py: number; scale: number };
@@ -42,12 +42,6 @@ function project(point: Point3, width: number, height: number): Point2 {
 
 export default function MobiusSimulation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pausedRef = useRef(false);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    pausedRef.current = paused;
-  }, [paused]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -76,9 +70,16 @@ export default function MobiusSimulation() {
       context.clearRect(0, 0, width, height);
 
       const turn = elapsed / 30000;
-      const strips: Array<{ points: Point2[]; depth: number; shade: number }> = [];
-      const uSteps = 88;
-      const vSteps = 10;
+      const strips: Array<{
+        points: Point2[];
+        depth: number;
+        light: number;
+        saturation: number;
+        hue: number;
+      }> = [];
+      const uSteps = 96;
+      const vSteps = 16;
+      const lightDirection = { x: -0.42, y: -0.7, z: 0.58 };
 
       for (let ui = 0; ui < uSteps; ui += 1) {
         const u1 = (ui / uSteps) * TAU;
@@ -93,10 +94,36 @@ export default function MobiusSimulation() {
             rotate(mobius(u1, v2), turn),
           ];
           const depth = vertices.reduce((sum, point) => sum + point.z, 0) / 4;
+          const edgeA = {
+            x: vertices[1].x - vertices[0].x,
+            y: vertices[1].y - vertices[0].y,
+            z: vertices[1].z - vertices[0].z,
+          };
+          const edgeB = {
+            x: vertices[3].x - vertices[0].x,
+            y: vertices[3].y - vertices[0].y,
+            z: vertices[3].z - vertices[0].z,
+          };
+          const normal = {
+            x: edgeA.y * edgeB.z - edgeA.z * edgeB.y,
+            y: edgeA.z * edgeB.x - edgeA.x * edgeB.z,
+            z: edgeA.x * edgeB.y - edgeA.y * edgeB.x,
+          };
+          const length = Math.hypot(normal.x, normal.y, normal.z) || 1;
+          const diffuse = Math.abs(
+            (normal.x * lightDirection.x +
+              normal.y * lightDirection.y +
+              normal.z * lightDirection.z) /
+              length,
+          );
+          const specular = Math.pow(diffuse, 9);
+          const edgeSheen = Math.pow(Math.abs((vi + 0.5) / vSteps - 0.5) * 2, 2.2);
           strips.push({
             points: vertices.map((point) => project(point, width, height)),
             depth,
-            shade: (Math.sin(u1 / 2) + 1) / 2,
+            light: 62 + diffuse * 19 + specular * 13 + edgeSheen * 4,
+            saturation: 28 + diffuse * 22,
+            hue: 252 + Math.sin(u1 / 2) * 10,
           });
         }
       }
@@ -109,11 +136,11 @@ export default function MobiusSimulation() {
           context.lineTo(strip.points[index].px, strip.points[index].py);
         }
         context.closePath();
-        const light = 93 - strip.shade * 12 + strip.depth * 2.6;
-        context.fillStyle = `hsl(258 62% ${light}%)`;
+        const fill = `hsl(${strip.hue} ${strip.saturation}% ${Math.min(95, strip.light + strip.depth * 1.8)}%)`;
+        context.fillStyle = fill;
         context.fill();
-        context.strokeStyle = "rgba(83, 58, 138, 0.12)";
-        context.lineWidth = 0.55;
+        context.strokeStyle = fill;
+        context.lineWidth = 0.8;
         context.stroke();
       }
 
@@ -162,7 +189,7 @@ export default function MobiusSimulation() {
     };
 
     const animate = (now: number) => {
-      if (pausedRef.current || reduceMotion.matches) {
+      if (reduceMotion.matches) {
         if (!frozenAt) frozenAt = now - start;
         draw(frozenAt || 8500);
       } else {
@@ -181,17 +208,12 @@ export default function MobiusSimulation() {
 
   return (
     <div className="mobius-card">
-      <div className="simulation-topline">
-        <span>Continuous system · 01</span>
-        <button type="button" onClick={() => setPaused((value) => !value)}>
-          {paused ? "Play" : "Pause"}
-        </button>
-      </div>
-      <canvas ref={canvasRef} className="mobius-canvas" aria-hidden="true" />
-      <div className="simulation-caption">
-        <span>Möbius study</span>
-        <p>One surface. One edge. A tungsten traveler with nowhere to fall off.</p>
-      </div>
+      <canvas
+        ref={canvasRef}
+        className="mobius-canvas"
+        role="img"
+        aria-label="An animated metallic purple Möbius strip with a tungsten ball traveling along its surface"
+      />
     </div>
   );
 }
