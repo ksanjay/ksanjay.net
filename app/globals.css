@@ -86,6 +86,7 @@ h1 {
   letter-spacing: -.045em;
   line-height: .96;
 }
+h1 span { display: block; }
 .lede {
   max-width: 640px;
   margin-bottom: 36px;
@@ -185,18 +186,75 @@ footer span { grid-column: 1 / -1; color: var(--soft-ochre); font-size: 11px; le
 }
 
 @media (max-width: 600px) {
-  .site-header { min-height: 78px; }
-  nav { gap: 16px; }
-  nav a { font-size: 10px; letter-spacing: .08em; }
-  .hero { padding-top: 72px; padding-bottom: 72px; }
-  h1 { font-size: clamp(48px, 15vw, 74px); overflow-wrap: anywhere; }
-  .section { padding-top: 76px; padding-bottom: 76px; }
+  body { overflow-x: hidden; }
+  .site-header { min-height: 72px; padding-inline: 18px; }
+  .wordmark { font-size: 24px; }
+  nav { gap: 13px; }
+  nav a { font-size: 9px; letter-spacing: .06em; }
+  nav a::after { bottom: -6px; }
+  .ruled {
+    background-image:
+      linear-gradient(90deg, transparent 0, transparent 20px, rgba(189,123,43,.52) 20px, rgba(189,123,43,.52) 21px, transparent 21px),
+      repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(70,80,56,.08) 31px, rgba(70,80,56,.08) 32px);
+  }
+  .hero {
+    gap: 48px;
+    padding: 64px 24px 68px 32px;
+  }
+  .eyebrow { margin-bottom: 26px; font-size: 10px; line-height: 1.55; }
+  h1 {
+    margin-bottom: 30px;
+    font-size: clamp(32px, 10vw, 48px);
+    letter-spacing: -.055em;
+    line-height: 1;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  h1 span { white-space: nowrap; }
+  .lede { margin-bottom: 30px; font-size: 21px; line-height: 1.42; }
+  .text-link { gap: 10px; font-size: 11px; line-height: 1.4; }
+  .field-note {
+    width: calc(100% - 8px);
+    padding: 34px 27px 30px;
+    box-shadow: 6px 8px 0 rgba(70,80,56,.08);
+  }
+  .field-note::before { margin-bottom: 28px; }
+  .field-note p { margin: 22px 0 30px; font-size: 25px; }
+  .section { gap: 28px; padding: 68px 24px; }
+  .section-kicker { gap: 13px; padding-bottom: 12px; }
+  .prose .prose-lead { font-size: 28px; line-height: 1.4; }
+  .prose p { font-size: 18px; line-height: 1.68; }
   .chapter { grid-template-columns: 1fr; gap: 10px; }
+  .chapter-years { padding-top: 0; margin-bottom: 4px; }
+  .chapter h2 { font-size: 22px; }
   .chapter-detail { grid-column: 1; }
-  .book-list li { grid-template-columns: 38px 1fr; }
+  .writings-intro h2, .markets h2, .books-heading h2 {
+    font-size: 39px;
+    line-height: 1.05;
+  }
+  .writings-intro > p, .markets-copy > p, .books-heading p { font-size: 19px; }
+  .writing-topics { margin-top: 48px; }
+  .writing-topics div { grid-template-columns: 42px 1fr; gap: 8px; padding: 20px 0; }
+  .writing-topics p { font-size: 21px; line-height: 1.3; }
+  .link-row { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .books-heading { margin-bottom: 36px; }
+  .book-list li { grid-template-columns: 32px 1fr; gap: 8px 12px; padding: 19px 0; }
   .book-list p:last-child { grid-column: 2; }
-  footer { grid-template-columns: 1fr; }
+  .credential-grid { gap: 18px; }
+  .credential-grid > div { min-height: 0; padding: 24px; }
+  .credential-number { font-size: 50px; }
+  .credential-degree { font-size: 36px; }
+  footer { grid-template-columns: 1fr; padding: 44px 20px; }
+  footer div { flex-wrap: wrap; gap: 20px 26px; }
   footer span { grid-column: 1; }
+}
+
+@media (max-width: 360px) {
+  .site-header { padding-inline: 14px; }
+  nav { gap: 10px; }
+  nav a { font-size: 8px; }
+  .hero { padding-inline: 28px 18px; }
+  h1 { font-size: 9.8vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
