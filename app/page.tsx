@@ -140,11 +140,13 @@ export default function Home() {
           </p>
         </div>
         <div className="writing-topics" aria-label="Writing topics">
-          <div><span>01</span><p>Technology &amp; products</p></div>
+          <a className="writing-topic-link" href="/writings/technology-products">
+            <span>01</span><p>Technology &amp; products</p><span aria-hidden="true">→</span>
+          </a>
           <div><span>02</span><p>Markets &amp; investing</p></div>
           <div><span>03</span><p>Notes &amp; observations</p></div>
         </div>
-        <p className="coming-soon">New essays will be published here.</p>
+        <p className="coming-soon">More essays will be published here.</p>
       </section>
 
       <section className="markets section">
