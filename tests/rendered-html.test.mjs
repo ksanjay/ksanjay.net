@@ -31,6 +31,7 @@ test("renders Sanjay's personal website", async () => {
   assert.match(html, /Sanjay Kalyanasundaram/);
   assert.match(html, /Read my writings/);
   assert.match(html, /Ideas in progress/);
+  assert.match(html, /Möbius study/);
   assert.match(html, /Books I return to/);
   assert.match(html, /github\.com\/ksanjay/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);

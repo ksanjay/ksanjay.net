@@ -1,3 +1,5 @@
+import MobiusSimulation from "./mobius-simulation";
+
 const books = [
   ["The Fabric of Reality", "David Deutsch"],
   ["The Beginning of Infinity", "David Deutsch"],
@@ -65,15 +67,13 @@ export default function Home() {
             Read my writings <span aria-hidden="true">→</span>
           </a>
         </div>
-        <aside className="field-note" aria-label="A note from Sanjay">
-          <span className="note-label">A working belief</span>
-          <p>
-            Powerful technology matters only when people can use it
-            effortlessly.
-          </p>
-          <span className="note-signoff">— Sanjay</span>
-        </aside>
+        <MobiusSimulation />
       </section>
+
+      <aside className="belief-strip" aria-label="A working belief">
+        <span>A working belief</span>
+        <p>Powerful technology matters only when people can use it effortlessly.</p>
+      </aside>
 
       <section className="about section" id="about">
         <div className="section-kicker">

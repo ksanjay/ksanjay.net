@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og-mobius.png",
         width: 1200,
         height: 630,
         alt: "Sanjay Kalyanasundaram — Product Builder, Writer, Investor",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sanjay Kalyanasundaram",
     description: "Product builder. Writer. Investor.",
-    images: ["/og.png"],
+    images: ["/og-mobius.png"],
   },
 };
 
