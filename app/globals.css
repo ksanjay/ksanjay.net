@@ -115,7 +115,7 @@ nav a:focus-visible,
 h1, h2, h3, p { margin-top: 0; }
 h1 {
   margin-bottom: 28px;
-  font-size: clamp(55px, 6.3vw, 88px);
+  font-size: clamp(37px, 4.2vw, 59px);
   font-weight: 650;
   letter-spacing: -.064em;
   line-height: .96;
@@ -271,7 +271,7 @@ h1 span { display: block; }
 .markets h2,
 .books-heading h2 {
   margin-bottom: 18px;
-  font-size: clamp(40px, 5vw, 66px);
+  font-size: clamp(27px, 3.35vw, 44px);
   font-weight: 620;
   letter-spacing: -.055em;
   line-height: 1;
@@ -374,7 +374,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   padding: 112px 0 90px;
   border-bottom: 1px solid var(--line);
 }
-.writing-index-hero h1 { max-width: 900px; margin-bottom: 24px; font-size: clamp(56px, 7vw, 86px); }
+.writing-index-hero h1 { max-width: 900px; margin-bottom: 24px; font-size: clamp(37px, 4.7vw, 57px); }
 .writing-index-hero > p:last-child { max-width: 730px; margin-bottom: 0; color: var(--text-soft); font-size: clamp(18px, 2vw, 24px); line-height: 1.6; }
 .paper-library {
   width: min(calc(100% - 48px), 1180px);
@@ -410,7 +410,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
 .paper-card-meta { display: flex; flex-direction: column; gap: 9px; color: var(--text-faint); font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .paper-card-meta span { color: var(--purple); }
 .paper-card-copy > p:first-child { color: var(--text-faint); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.paper-card-copy h2 { margin-bottom: 12px; font-size: clamp(30px, 3.7vw, 48px); font-weight: 620; letter-spacing: -.048em; line-height: 1.04; }
+.paper-card-copy h2 { margin-bottom: 12px; font-size: clamp(20px, 2.5vw, 32px); font-weight: 620; letter-spacing: -.048em; line-height: 1.04; }
 .paper-card-copy h3 { margin: 0 0 20px; color: var(--text-soft); font-size: 17px; font-weight: 500; line-height: 1.45; }
 .paper-card-copy > p:last-child { max-width: 650px; margin-bottom: 0; color: var(--text-soft); font-size: 15px; line-height: 1.65; }
 .paper-card-arrow { align-self: center; color: var(--purple); font-size: 24px; transition: transform 180ms ease; }
@@ -430,7 +430,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
 }
 .paper-number,
 .paper-section-label { color: var(--purple); }
-.paper-cover h1 { max-width: 950px; margin: 23px auto 22px; font-size: clamp(48px, 6.5vw, 86px); line-height: .98; }
+.paper-cover h1 { max-width: 950px; margin: 23px auto 22px; font-size: clamp(32px, 4.35vw, 57px); line-height: .98; }
 .paper-subtitle { max-width: 700px; margin: 0 auto 32px; color: var(--text-soft); font-size: clamp(19px, 2.1vw, 26px); line-height: 1.5; }
 .paper-byline { display: flex; justify-content: center; gap: 20px; color: var(--text-faint); font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
 .paper-byline span::after { content: ""; display: inline-block; width: 1px; height: 11px; margin-left: 20px; vertical-align: -2px; background: var(--line-strong); }
@@ -450,7 +450,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
 .paper-conclusion h2,
 .paper-markdown > h2 {
   margin: 10px 0 24px;
-  font-size: clamp(32px, 4.3vw, 49px);
+  font-size: clamp(21px, 2.9vw, 33px);
   font-weight: 620;
   letter-spacing: -.048em;
   line-height: 1.08;
@@ -486,7 +486,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
 .paper-architecture { margin-bottom: 64px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; scroll-margin-top: 30px; }
 .paper-architecture-heading { padding: 28px 30px 24px; border-bottom: 1px solid var(--line); }
 .paper-architecture-heading > span { color: var(--purple); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.paper-architecture-heading h2 { margin-bottom: 10px; font-size: 35px; }
+.paper-architecture-heading h2 { margin-bottom: 10px; font-size: 23px; }
 .paper-architecture-heading p { margin-bottom: 0; color: var(--text-soft); font-size: 14px; line-height: 1.5; }
 .architecture-diagram { padding: 28px; display: grid; gap: 7px; background: var(--surface-subtle); border-bottom: 1px solid var(--line); }
 .architecture-diagram > div { display: grid; grid-template-columns: 38px 1fr; align-items: center; min-height: 48px; padding: 8px 15px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
@@ -540,7 +540,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   nav a { padding: 8px 7px; font-size: 9px; }
   .hero { width: calc(100% - 38px); gap: 46px; padding: 72px 0 58px; }
   .eyebrow { margin-bottom: 23px; font-size: 9px; }
-  h1 { margin-bottom: 25px; font-size: clamp(36px, 12vw, 55px); line-height: .98; }
+  h1 { margin-bottom: 25px; font-size: clamp(24px, 8vw, 37px); line-height: .98; }
   h1 span { white-space: nowrap; }
   .lede { margin-bottom: 27px; font-size: 19px; }
   .mobius-card { border-radius: 18px; }
@@ -557,7 +557,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   .chapter-detail { grid-column: 1; }
   .writings-intro h2,
   .markets h2,
-  .books-heading h2 { font-size: 39px; }
+  .books-heading h2 { font-size: 26px; }
   .writings-intro > p,
   .markets-copy > p,
   .books-heading p { font-size: 16px; }
@@ -577,18 +577,18 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   footer div { flex-wrap: wrap; }
   footer > span { grid-column: 1; }
   .writing-index-hero { width: calc(100% - 38px); padding: 82px 0 68px; }
-  .writing-index-hero h1 { font-size: 46px; }
+  .writing-index-hero h1 { font-size: 31px; }
   .writing-index-hero > p:last-child { font-size: 18px; }
   .paper-library { width: calc(100% - 38px); gap: 26px; padding: 70px 0 82px; }
   .paper-card { grid-template-columns: 1fr auto; gap: 22px 10px; }
   .paper-card-meta { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
-  .paper-card-copy h2 { font-size: 34px; }
+  .paper-card-copy h2 { font-size: 23px; }
   .paper-card-copy h3 { font-size: 16px; }
   .paper-site-header > div { gap: 0; }
   .paper-site-header > div a { padding: 8px 7px; font-size: 8px; }
   .paper-site-header > div a:first-child { display: none; }
   .paper-cover { width: calc(100% - 38px); padding: 80px 0 60px; }
-  .paper-cover h1 { font-size: 44px; }
+  .paper-cover h1 { font-size: 29px; }
   .paper-byline { flex-direction: column; gap: 7px; }
   .paper-byline span::after { display: none; }
   .paper-body { padding: 50px 20px 82px; }
@@ -597,7 +597,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   .paper-section > h2,
   .paper-architecture h2,
   .paper-conclusion h2,
-  .paper-markdown > h2 { font-size: 34px; }
+  .paper-markdown > h2 { font-size: 23px; }
   .paper-section > p,
   .paper-architecture-copy p,
   .paper-conclusion > p,
@@ -607,7 +607,7 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   .paper-info-card { padding: 20px; }
   .paper-architecture-heading,
   .paper-architecture-copy { padding: 23px 21px; }
-  .paper-architecture-heading h2 { font-size: 30px; }
+  .paper-architecture-heading h2 { font-size: 20px; }
   .architecture-diagram { padding: 21px 15px; }
   .architecture-diagram > div { grid-template-columns: 30px 1fr; padding: 8px 10px; }
   .paper-conclusion { margin-top: 62px; padding: 31px 23px; }
