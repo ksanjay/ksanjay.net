@@ -93,10 +93,20 @@ export default function Home() {
       <section className="hero ruled" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Product builder · Writer · Investor</p>
-          <h1>
-            <span>Sanjay</span>
-            <span>Kalyanasundaram</span>
-          </h1>
+          <div className="hero-identity">
+            <figure className="hero-portrait">
+              <img
+                src="/sanjay-portrait-stipple.png"
+                alt="Stipple portrait of Sanjay Kalyanasundaram"
+                width="520"
+                height="756"
+              />
+            </figure>
+            <h1>
+              <span>Sanjay</span>
+              <span>Kalyanasundaram</span>
+            </h1>
+          </div>
           <p className="lede">
             I build ambitious products where emerging technology meets real
             business value.
