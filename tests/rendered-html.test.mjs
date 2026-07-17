@@ -31,7 +31,8 @@ test("renders Sanjay's personal website", async () => {
   assert.match(html, /Sanjay Kalyanasundaram/);
   assert.match(html, /sanjay-portrait-stipple\.png/);
   assert.match(html, /Stipple portrait of Sanjay Kalyanasundaram/);
-  assert.match(html, /Read my writings/);
+  assert.match(html, /I build useful products/);
+  assert.match(html, /My Thoughts/);
   assert.match(html, /Ideas in progress/);
   assert.match(html, /metallic purple Möbius strip/);
   assert.match(html, /Books I return to/);

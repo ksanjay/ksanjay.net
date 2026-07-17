@@ -108,11 +108,11 @@ export default function Home() {
             </h1>
           </div>
           <p className="lede">
-            I build ambitious products where emerging technology meets real
+            I build useful products where emerging technology meets real
             business value.
           </p>
           <a className="text-link" href="#writings">
-            Read my writings <span aria-hidden="true">→</span>
+            My Thoughts <span aria-hidden="true">→</span>
           </a>
         </div>
         <MobiusSimulation />
