@@ -264,18 +264,27 @@ h1 span { display: block; }
 .link-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .books-heading { margin-bottom: 46px; }
 .book-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.book-list li {
+.book-list li { border-bottom: 1px solid var(--line); }
+.book-link {
   display: grid;
-  grid-template-columns: 46px 1fr minmax(140px, 210px);
+  grid-template-columns: 46px 1fr minmax(150px, 220px) 20px;
   gap: 22px;
   padding: 19px 0;
   align-items: baseline;
-  border-bottom: 1px solid var(--line);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 180ms ease, padding 180ms ease;
 }
+.book-link:hover,
+.book-link:focus-visible { padding-inline: 14px; background: var(--purple-soft); outline: none; }
 .book-list span { color: var(--purple); font-size: 10px; font-weight: 700; }
 .book-list p { margin-bottom: 0; }
 .book-list p:nth-child(2) { font-size: 16px; font-weight: 590; }
-.book-list p:last-child { color: var(--text-faint); font-size: 12px; }
+.book-list p:nth-child(3) { color: var(--text-faint); font-size: 12px; }
+.book-list small { display: block; margin-top: 4px; color: var(--text-soft); font-size: 10px; }
+.book-list .book-arrow { font-size: 15px; transition: transform 180ms ease; }
+.book-link:hover .book-arrow,
+.book-link:focus-visible .book-arrow { transform: translate(3px, -3px); }
 
 .credential-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .credential-grid > div {
@@ -745,8 +754,9 @@ footer > span { grid-column: 1 / -1; color: #8d8995; font-size: 9px; letter-spac
   .writing-topic-link { grid-template-columns: 35px 1fr auto; }
   .writing-topics p { font-size: 19px; line-height: 1.28; }
   .link-row { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .book-list li { grid-template-columns: 28px 1fr; gap: 8px 10px; padding: 17px 0; }
-  .book-list p:last-child { grid-column: 2; }
+  .book-link { grid-template-columns: 28px 1fr 18px; gap: 8px 10px; padding: 17px 0; }
+  .book-list p:nth-child(3) { grid-column: 2; }
+  .book-list .book-arrow { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
   .credential-grid { gap: 10px; }
   .credential-grid > div { min-height: 0; padding: 22px; }
   .credential-number,

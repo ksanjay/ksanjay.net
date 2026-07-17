@@ -34,6 +34,10 @@ test("renders Sanjay's personal website", async () => {
   assert.match(html, /metallic purple Möbius strip/);
   assert.match(html, /Books I return to/);
   assert.match(html, /github\.com\/ksanjay/);
+  const amazonLinks = html.match(/https:\/\/www\.amazon\.com\/dp\/[A-Z0-9]+/g) ?? [];
+  assert.equal(new Set(amazonLinks).size, 8);
+  assert.match(html, /Influence, New and Expanded/);
+  assert.match(html, /Hardcover · 2021/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
 

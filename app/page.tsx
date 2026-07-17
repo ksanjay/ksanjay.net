@@ -1,17 +1,55 @@
 import MobiusSimulation from "./mobius-simulation";
 
 const books = [
-  ["The Fabric of Reality", "David Deutsch"],
-  ["The Beginning of Infinity", "David Deutsch"],
-  ["Influence", "Robert Cialdini"],
-  ["Power vs. Force", "David R. Hawkins"],
-  ["A Savage War of Peace", "Alistair Horne"],
-  [
-    "Observations upon the Prophecies of Daniel and the Apocalypse of St. John",
-    "Sir Isaac Newton",
-  ],
-  ["The Theory of Speculation", "Louis Bachelier"],
-  ["What I Learned About Investing from Darwin", "Pulak Prasad"],
+  {
+    title: "The Fabric of Reality",
+    author: "David Deutsch",
+    edition: "Paperback · 1998",
+    href: "https://www.amazon.com/dp/014027541X",
+  },
+  {
+    title: "The Beginning of Infinity",
+    author: "David Deutsch",
+    edition: "Paperback · 2012",
+    href: "https://www.amazon.com/dp/0143121359",
+  },
+  {
+    title: "Influence, New and Expanded",
+    author: "Robert B. Cialdini",
+    edition: "Hardcover · 2021",
+    href: "https://www.amazon.com/dp/0062937650",
+  },
+  {
+    title: "Power vs. Force",
+    author: "David R. Hawkins",
+    edition: "Paperback · 2013",
+    href: "https://www.amazon.com/dp/1401945074",
+  },
+  {
+    title: "A Savage War of Peace",
+    author: "Alistair Horne",
+    edition: "Paperback · 2006",
+    href: "https://www.amazon.com/dp/1590172183",
+  },
+  {
+    title:
+      "Observations upon the Prophecies of Daniel and the Apocalypse of St. John",
+    author: "Sir Isaac Newton",
+    edition: "Annotated edition · 2025",
+    href: "https://www.amazon.com/dp/B0FBWTJLKY",
+  },
+  {
+    title: "Louis Bachelier's Theory of Speculation",
+    author: "Louis Bachelier",
+    edition: "Hardcover · 2006",
+    href: "https://www.amazon.com/dp/0691117527",
+  },
+  {
+    title: "What I Learned About Investing from Darwin",
+    author: "Pulak Prasad",
+    edition: "Hardcover · 2023",
+    href: "https://www.amazon.com/dp/0231203489",
+  },
 ];
 
 const chapters = [
@@ -187,11 +225,23 @@ export default function Home() {
             <p>A short shelf of ideas that have stayed with me.</p>
           </div>
           <ol className="book-list">
-            {books.map(([title, author], index) => (
-              <li key={title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <p>{title}</p>
-                <p>{author}</p>
+            {books.map((book, index) => (
+              <li key={book.title}>
+                <a
+                  className="book-link"
+                  href={book.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${book.title} by ${book.author}, ${book.edition} on Amazon`}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>{book.title}</p>
+                  <p>
+                    {book.author}
+                    <small>{book.edition}</small>
+                  </p>
+                  <span className="book-arrow" aria-hidden="true">↗</span>
+                </a>
               </li>
             ))}
           </ol>
