@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "AI Compute Infrastructure | Sanjay Kalyanasundaram",
@@ -168,14 +169,15 @@ function UnitCostEquation() {
 
 export default function NeocloudInferenceEra() {
   return (
-    <main className="paper-page market-paper">
+    <main className="paper-page market-paper" id="main-content">
       <header className="paper-site-header">
-        <a className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
-          SK<span className="wordmark-dot">.</span>
-        </a>
+        <Link className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
+          <span>SK</span>
+          <small>Sanjay Kalyanasundaram</small>
+        </Link>
         <div>
-          <a href="/writings/markets-investing">Markets &amp; investing</a>
-          <a href="/">Home</a>
+          <Link href="/writings/markets-investing">Markets &amp; investing</Link>
+          <Link href="/">Home</Link>
         </div>
       </header>
 
@@ -533,8 +535,8 @@ export default function NeocloudInferenceEra() {
       <footer className="paper-footer">
         <p>Sanjay Kalyanasundaram · AI Compute Infrastructure</p>
         <div>
-          <a href="/writings/markets-investing">All market papers</a>
-          <a href="/">Home</a>
+          <Link href="/writings/markets-investing">All market papers</Link>
+          <Link href="/">Home</Link>
         </div>
         <span>June 2026</span>
       </footer>

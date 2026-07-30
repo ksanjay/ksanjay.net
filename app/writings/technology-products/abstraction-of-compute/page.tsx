@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import articleMarkdown from "../../../../drafts/the-abstraction-of-compute.md?raw";
 
 export const metadata: Metadata = {
@@ -133,14 +134,15 @@ const articleHtml = markdownToHtml(articleMarkdown);
 
 export default function AbstractionOfCompute() {
   return (
-    <main className="paper-page">
+    <main className="paper-page" id="main-content">
       <header className="paper-site-header">
-        <a className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
-          SK<span className="wordmark-dot">.</span>
-        </a>
+        <Link className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
+          <span>SK</span>
+          <small>Sanjay Kalyanasundaram</small>
+        </Link>
         <div>
-          <a href="/writings/technology-products">Technology &amp; products</a>
-          <a href="/">Home</a>
+          <Link href="/writings/technology-products">Technology &amp; products</Link>
+          <Link href="/">Home</Link>
         </div>
       </header>
 
@@ -164,8 +166,8 @@ export default function AbstractionOfCompute() {
       <footer className="paper-footer">
         <p>Sanjay Kalyanasundaram · The Abstraction of Compute</p>
         <div>
-          <a href="/writings/technology-products">All papers</a>
-          <a href="/">Home</a>
+          <Link href="/writings/technology-products">All papers</Link>
+          <Link href="/">Home</Link>
         </div>
         <span>July 15, 2026</span>
       </footer>

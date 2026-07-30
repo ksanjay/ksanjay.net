@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Markets & Investing | Sanjay Kalyanasundaram",
@@ -8,15 +9,16 @@ export const metadata: Metadata = {
 
 export default function MarketsInvesting() {
   return (
-    <main className="writing-index">
+    <main className="writing-index" id="main-content">
       <header className="site-header" aria-label="Primary navigation">
-        <a className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
-          SK<span className="wordmark-dot">.</span>
-        </a>
-        <nav>
-          <a href="/#about">About</a>
-          <a href="/#writings">Writings</a>
-          <a href="/#books">Bookshelf</a>
+        <Link className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
+          <span>SK</span>
+          <small>Sanjay Kalyanasundaram</small>
+        </Link>
+        <nav aria-label="Primary">
+          <Link href="/#about">About</Link>
+          <Link href="/#writings">Writings</Link>
+          <Link href="/#books">Bookshelf</Link>
         </nav>
       </header>
 
@@ -62,8 +64,8 @@ export default function MarketsInvesting() {
       <footer>
         <p>Markets, mechanisms, and ideas worth underwriting.</p>
         <div>
-          <a href="/#writings">All writing topics</a>
-          <a href="/">Home</a>
+          <Link href="/#writings">All writing topics</Link>
+          <Link href="/">Home</Link>
         </div>
         <span>© {new Date().getFullYear()} Sanjay Kalyanasundaram</span>
       </footer>

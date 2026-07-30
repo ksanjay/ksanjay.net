@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MobiusSimulation from "./mobius-simulation";
 
 const books = [
@@ -78,35 +79,37 @@ const chapters = [
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <header className="site-header" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Sanjay Kalyanasundaram, home">
-          SK<span className="wordmark-dot">.</span>
+          <span>SK</span>
+          <small>Sanjay Kalyanasundaram</small>
         </a>
-        <nav>
+        <nav aria-label="On this page">
           <a href="#about">About</a>
           <a href="#writings">Writings</a>
           <a href="#books">Bookshelf</a>
         </nav>
       </header>
 
-      <section className="hero ruled" id="top">
+      <section className="hero" id="top">
+        <figure className="hero-portrait">
+          <Image
+            src="/sanjay-portrait-stipple.png"
+            alt="Stipple portrait of Sanjay Kalyanasundaram"
+            width="520"
+            height="756"
+            sizes="(max-width: 600px) 240px, (max-width: 900px) 36vw, 260px"
+            priority
+          />
+          <figcaption>Portrait study · 2026</figcaption>
+        </figure>
         <div className="hero-copy">
           <p className="eyebrow">Product builder · Writer · Investor</p>
-          <div className="hero-identity">
-            <figure className="hero-portrait">
-              <img
-                src="/sanjay-portrait-stipple.png"
-                alt="Stipple portrait of Sanjay Kalyanasundaram"
-                width="520"
-                height="756"
-              />
-            </figure>
-            <h1>
-              <span>Sanjay</span>
-              <span>Kalyanasundaram</span>
-            </h1>
-          </div>
+          <h1>
+            <span>Sanjay</span>
+            <span>Kalyanasundaram</span>
+          </h1>
           <p className="lede">
             I build useful products where emerging technology meets real
             business value.
@@ -115,7 +118,13 @@ export default function Home() {
             My Thoughts <span aria-hidden="true">→</span>
           </a>
         </div>
-        <MobiusSimulation />
+        <div className="hero-study">
+          <MobiusSimulation />
+          <p>
+            A study in continuity:
+            <span>one surface, no edge.</span>
+          </p>
+        </div>
       </section>
 
       <aside className="belief-strip" aria-label="A working belief">

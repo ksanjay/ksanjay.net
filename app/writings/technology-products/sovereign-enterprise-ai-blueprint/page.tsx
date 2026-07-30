@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "The Sovereign Enterprise AI Blueprint — Sanjay Kalyanasundaram",
@@ -86,14 +87,15 @@ function ArchitectureDiagram({ layers }: { layers: string[] }) {
 
 export default function SovereignEnterpriseAIBlueprint() {
   return (
-    <main className="paper-page">
+    <main className="paper-page" id="main-content">
       <header className="paper-site-header">
-        <a className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
-          SK<span className="wordmark-dot">.</span>
-        </a>
+        <Link className="wordmark" href="/" aria-label="Sanjay Kalyanasundaram, home">
+          <span>SK</span>
+          <small>Sanjay Kalyanasundaram</small>
+        </Link>
         <div>
-          <a href="/writings/technology-products">Technology &amp; products</a>
-          <a href="/">Home</a>
+          <Link href="/writings/technology-products">Technology &amp; products</Link>
+          <Link href="/">Home</Link>
         </div>
       </header>
 
@@ -329,8 +331,8 @@ export default function SovereignEnterpriseAIBlueprint() {
       <footer className="paper-footer">
         <p>Sanjay Kalyanasundaram · The Sovereign Enterprise AI Blueprint</p>
         <div>
-          <a href="/writings/technology-products">All papers</a>
-          <a href="/">Home</a>
+          <Link href="/writings/technology-products">All papers</Link>
+          <Link href="/">Home</Link>
         </div>
         <span>June 19, 2026</span>
       </footer>

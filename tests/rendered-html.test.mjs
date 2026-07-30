@@ -29,6 +29,7 @@ test("renders Sanjay's personal website", async () => {
 
   const html = await response.text();
   assert.match(html, /Sanjay Kalyanasundaram/);
+  assert.match(html, /Skip to content/);
   assert.match(html, /sanjay-portrait-stipple\.png/);
   assert.match(html, /Stipple portrait of Sanjay Kalyanasundaram/);
   assert.match(html, /I build useful products/);
@@ -41,6 +42,7 @@ test("renders Sanjay's personal website", async () => {
   assert.equal(new Set(amazonLinks).size, 8);
   assert.match(html, /Influence, New and Expanded/);
   assert.match(html, /Hardcover · 2021/);
+  assert.match(html, /og-editorial\.png/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
 
